@@ -5,6 +5,7 @@ This code provides a quick visualization of the FLAME model.
 
 ## Installation
 You need to gather the flame data (FLAME 2020) from MPI. 
+You will also need PyTorch3D for basic render, and streamlit for interactive purpose. 
 
 
 

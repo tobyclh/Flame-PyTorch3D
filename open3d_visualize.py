@@ -33,7 +33,7 @@ def main(model_folder, ext='pkl',
     betas = torch.zeros([1, 300], dtype=torch.float32)
     expression = torch.zeros([1, 100], dtype=torch.float32)
 
-    output = model(betas=betas, expression=expression,
+    output = model(betas=betas, expression=expression, 
                    return_verts=True)
     vertices = output.vertices.detach().cpu().numpy().squeeze()
     joints = output.joints.detach().cpu().numpy().squeeze()
@@ -47,7 +47,6 @@ def main(model_folder, ext='pkl',
     mesh.compute_vertex_normals()
 
     colors = np.ones_like(vertices) * [0.3, 0.3, 0.3]
-    # colors[head_idxs] = head_color
 
     mesh.vertex_colors = o3d.utility.Vector3dVector(colors)
 
